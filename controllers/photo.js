@@ -1,5 +1,5 @@
-const photo = require('../model/photo')
-const album = require('../model/album')
+const photo = require('../db/photo')
+const album = require('../db/album')
 module.exports = {
   async getPhotos (userId, albumId, pageIndex, pageSize) {
     const [count, photos] = await Promise.all([photo.getPhotosCount(userId, albumId), photo.getPhotos(userId, albumId, pageIndex, pageSize)])

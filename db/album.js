@@ -1,6 +1,6 @@
 const {
   Album
-} = require('./model')
+} = require('../model/model')
 
 module.exports = {
   async add (userId, name) {

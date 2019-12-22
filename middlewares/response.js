@@ -23,7 +23,7 @@ module.exports = async function (ctx, next) {
             ctx.body = ctx.body;
         } else {
             ctx.body = {
-                code: "0001",
+                code: "1000",
                 message: message,
                 data: ctx.body
 

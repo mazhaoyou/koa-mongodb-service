@@ -1,6 +1,6 @@
 const {
   User
-} = require('./model')
+} = require('../model/model')
 const {
   encode,
   decode

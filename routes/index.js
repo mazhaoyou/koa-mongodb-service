@@ -20,23 +20,18 @@ async function responseOK (ctx, next) {
 }
 
 
-router.post('/room/add',async (context, next) => {
-  const {
-    name,code,remark  
-  } = context.request.body
-  await controllers.room.add(name,code,remark)
-  await next()
-  context.body = {
-    code:1000
-  }
-})
+router.post('/room/add',controllers.room.add);
+// async (context, next) => {
+//   const {
+//     name,code,remark  
+//   } = context.request.body
+//   await controllers.room.add(name,code,remark)
+//   await next()
+//   context.body = {
+//     code:1000
+//   }
+// })
 
-router.get('/room/getRoomList', async (context, next) => {
-  let roomList = await controllers.room.getRoomList();
-  console.log(roomList);
-  context.body = {
-     roomList
-     }
-})
+router.get('/room/getRoomList', controllers.room.getRoomList)
 
 module.exports = router

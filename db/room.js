@@ -1,6 +1,6 @@
 const {
     Room
-  } = require('./model')
+  } = require('../model/model')
   
   module.exports = {
 

@@ -1,6 +1,6 @@
 const {
   Code
-} = require('./model')
+} = require('../model/model')
 
 module.exports = {
   async add (code) {

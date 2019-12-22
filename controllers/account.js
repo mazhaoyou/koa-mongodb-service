@@ -7,10 +7,10 @@ const {
   getUsers,
   getUsersCount
 
-} = require('../model/user')
+} = require('../db/user')
 const {
   add, updateSessionKey, getSessionKey, removeData
-} = require('../model/code')
+} = require('../db/code')
 const {
   getSession
 } = require('../lib/wx')

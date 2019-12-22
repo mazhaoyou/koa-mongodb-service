@@ -1,22 +1,45 @@
-const room = require('../model/room')
-module.exports = {
+const room = require('../db/room')
+
  
-  async approve (id, state) {
+  async function  approve (ctx) {
+    const {
+      id,
+      state
+    } = ctx.query;
     return photo.approve(id, state)
-  },
-  async updatePhoto (id, data) {
+  }
+  async  function updatePhoto (ctx) {
+    const {
+      id,
+      data
+    } = ctx.query;
     return photo.update(id, data)
-  },
-  async delete (id) {
-    return photo.delete(id)
-  },
-  async add (name, code,remark) {
-    return room.add(name,code,remark)
-  },
-  async getRoomList () {
-    let roomList = await room.getRoom();
-    console.log(roomList);
-    return roomList;
   }
 
+  // async function delete (id) {
+  //   return photo.delete(id)
+  // }
+  async function add (ctx) {
+    const {
+      name,
+      code,
+      remark
+    } = ctx.request.body;
+
+    let result =  await room.add(name,code,remark)
+    ctx.body = result
+    
+  }
+  // 获得列表
+  async function getRoomList (ctx) {
+    let roomList = await room.getRoom();
+    ctx.body = {
+      roomList:roomList
+    }
+  }
+  module.exports = {
+    approve,
+    updatePhoto,
+    add,
+    getRoomList
 }

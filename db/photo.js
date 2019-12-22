@@ -1,6 +1,6 @@
 const {
   Phopto
-} = require('./model')
+} = require('../model/model')
 
 module.exports = {
   async add (userId, url, albumId) {
